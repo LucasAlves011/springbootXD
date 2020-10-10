@@ -19,6 +19,11 @@ public class Promocao implements Serializable {
     private float preco;
     private LocalDateTime criadoEm;
 
+    public Promocao(int aPartir , float preco){
+        this.aPartir = aPartir;
+        this.preco = preco;
+    }
+
     public Promocao(){
         this.criadoEm = LocalDateTime.now();
     }

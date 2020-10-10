@@ -1,5 +1,5 @@
 package com.api.springboot.model;
-import java.time.LocalDateTime;
+import java.time.*;
 
 
 public class Comprador {

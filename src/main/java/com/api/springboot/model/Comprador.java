@@ -1,60 +1,51 @@
 package com.api.springboot.model;
-import java.time.*;
 
+import java.time.LocalDateTime;
 
 public class Comprador {
-    private long id;
-    private Produto produto;
-    private int quantidade;
-    private float precoTotal;
+    private Long id;
+    private String nome;
+    private boolean superComprador;
     private LocalDateTime criadoEm;
 
-    public long getId() {
+    public Comprador(Long id, String nome, boolean superComprador) {
+        this.id = id;
+        this.nome = nome;
+        this.superComprador = superComprador;
+        this.criadoEm = criadoEm;
+    }
+
+    public Comprador() {
+
+        this.criadoEm = LocalDateTime.now();
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public boolean isSuperComprador() {
+        return superComprador;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public float getPrecoTotal() {
-        return precoTotal;
-    }
-
-    public void setPrecoTotal(float precoTotal) {
-        this.precoTotal = precoTotal;
+    public void setSuperComprador(boolean superComprador) {
+        this.superComprador = superComprador;
     }
 
     public LocalDateTime getCriadoEm() {
         return criadoEm;
-    }
-
-    public Comprador(Produto produto, int quantidade, float precoTotal) {
-
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.precoTotal = precoTotal;
-        this.criadoEm = LocalDateTime.now();
-    }
-
-    public Comprador() {
-        this.criadoEm = LocalDateTime.now();
     }
 
 }

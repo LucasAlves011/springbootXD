@@ -1,5 +1,7 @@
 package com.api.springboot.model;
 
+import org.apache.tomcat.jni.Local;
+
 import java.time.LocalDateTime;
 
 public class Comprador {
@@ -8,11 +10,10 @@ public class Comprador {
     private boolean superComprador;
     private LocalDateTime criadoEm;
 
-    public Comprador(Long id, String nome, boolean superComprador) {
-        this.id = id;
+    public Comprador(String nome, boolean superComprador) {
         this.nome = nome;
         this.superComprador = superComprador;
-        this.criadoEm = criadoEm;
+        this.criadoEm = LocalDateTime.now();
     }
 
     public Comprador() {

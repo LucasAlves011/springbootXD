@@ -2,11 +2,12 @@ package com.api.springboot.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Promocoes")
-public class Promocao {
+public class Promocao implements Serializable {
 
     private static final long serialVersonUID = 1L;
 

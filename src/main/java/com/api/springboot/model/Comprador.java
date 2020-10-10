@@ -1,5 +1,6 @@
 package com.api.springboot.model;
-import java.time.*;
+import java.time.LocalDateTime;
+
 
 public class Comprador {
     private long id;

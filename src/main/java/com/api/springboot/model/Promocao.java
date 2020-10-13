@@ -1,9 +1,15 @@
 package com.api.springboot.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "Promocoes")
@@ -15,17 +21,27 @@ public class Promocao implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+
     private int aPartir;
     private float preco;
-    private LocalDateTime criadoEm;
 
-    public Promocao(int aPartir , float preco){
-        this.aPartir = aPartir;
-        this.preco = preco;
+    @CreatedDate()
+    private Date criadoEm = new Date();
+
+    public long getId() {
+        return id;
     }
 
-    public Promocao(){
-        this.criadoEm = LocalDateTime.now();
+//    public void setId(long id) {
+//        this.id = id;
+//    }
+
+    public Date getCriadoEm() {
+        return criadoEm;
+    }
+
+    public void setCriadoEm(Date criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
     public int getaPartir() {

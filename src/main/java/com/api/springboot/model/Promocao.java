@@ -1,14 +1,10 @@
 package com.api.springboot.model;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,20 +17,15 @@ public class Promocao implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     private int aPartir;
     private float preco;
 
-    @CreatedDate()
-    private Date criadoEm = new Date();
+    @CreatedDate
+    private Date criadoEm = new Date() ;
 
     public long getId() {
         return id;
     }
-
-//    public void setId(long id) {
-//        this.id = id;
-//    }
 
     public Date getCriadoEm() {
         return criadoEm;

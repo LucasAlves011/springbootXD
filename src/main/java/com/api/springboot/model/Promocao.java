@@ -1,9 +1,11 @@
 package com.api.springboot.model;
 
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "Promocoes")
@@ -17,15 +19,20 @@ public class Promocao implements Serializable {
 
     private int aPartir;
     private float preco;
-    private LocalDateTime criadoEm;
 
-    public Promocao(int aPartir , float preco){
-        this.aPartir = aPartir;
-        this.preco = preco;
+    @CreatedDate
+    private Date criadoEm = new Date() ;
+
+    public long getId() {
+        return id;
     }
 
-    public Promocao(){
-        this.criadoEm = LocalDateTime.now();
+    public Date getCriadoEm() {
+        return criadoEm;
+    }
+
+    public void setCriadoEm(Date criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
     public int getaPartir() {

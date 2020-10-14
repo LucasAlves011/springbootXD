@@ -8,6 +8,7 @@ public class Compra {
     private Produto produto;
     private int quantidade;
     private float precoTotal;
+    private Promocao promocao;
     private Date criadoEm;
 
     public long getId() {
@@ -44,6 +45,14 @@ public class Compra {
 
     public Date getCriadoEm() {
         return criadoEm;
+    }
+
+    public Promocao getPromocao() {
+        return promocao;
+    }
+
+    public void setPromocao(Promocao promocao) {
+        this.promocao = promocao;
     }
 
 }

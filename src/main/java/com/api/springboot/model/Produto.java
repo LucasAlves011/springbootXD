@@ -1,6 +1,7 @@
 package com.api.springboot.model;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Produto {
     private Long id;
@@ -8,9 +9,7 @@ public class Produto {
     private float preco;
     private float peso;
     private boolean tipo;
-    private boolean ifPromocao;
-    private Promocao promocao;
-    private LocalDateTime criadoEm;
+    private Date criadoEm;
 
     public Long getId() {
         return id;
@@ -52,23 +51,7 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    public boolean isIfPromocao() {
-        return ifPromocao;
-    }
-
-    public void setIfPromocao(boolean ifPromocao) {
-        this.ifPromocao = ifPromocao;
-    }
-
-    public Promocao getPromocao() {
-        return promocao;
-    }
-
-    public void setPromocao(Promocao promocao) {
-        this.promocao = promocao;
-    }
-
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 

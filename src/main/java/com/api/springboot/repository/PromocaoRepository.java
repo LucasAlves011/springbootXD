@@ -10,5 +10,4 @@ public interface PromocaoRepository extends JpaRepository<Promocao,Long> {
     Promocao findById(long id);
     void deleteById(long id);
 
-
 }

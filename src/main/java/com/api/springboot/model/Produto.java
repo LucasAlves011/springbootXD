@@ -1,15 +1,26 @@
 package com.api.springboot.model;
 
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+@Entity
+@Table(name = "produtos")
 public class Produto {
+    private static final long serialVersonUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private float preco;
     private float peso;
     private boolean tipo;
-    private Date criadoEm;
+
+    @CreatedDate
+    private Date criadoEm = new Date();
 
     public Long getId() {
         return id;

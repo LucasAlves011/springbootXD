@@ -30,8 +30,8 @@ public class PromocaoController {
     }
 
     @DeleteMapping("/promocao")
-    public void deletaPromocao(@RequestBody Promocao promocao){
-        promocaoRepository.delete(promocao);
+    public void deletaPromocao(@RequestBody Promocao produto){
+        promocaoRepository.delete(produto);
     }
 
     @DeleteMapping("/promocao/{id}")
@@ -39,8 +39,6 @@ public class PromocaoController {
         promocaoRepository.deleteById(id);
     }
 
-    @PutMapping("/promocao/put")
-    public Promocao atualizarPromocao(@RequestBody Promocao promocao){
-        return promocaoRepository.save(promocao);
-    }
+    @PutMapping("/promocao")
+    public Promocao atualizarPromocao(@RequestBody Promocao promocao){return promocaoRepository.save(promocao);}
 }

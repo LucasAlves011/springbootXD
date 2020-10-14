@@ -1,11 +1,26 @@
 package com.api.springboot.model;
 
 import java.util.Date;
+import org.springframework.data.annotation.CreatedDate;
 
-public class Categoria {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+@Table(name = "Categorias")
+
+public class Categoria implements Serializable {
+
+    private static final long serialVersonUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
     private String nome;
-    private Date criadoEm;
+    @CreatedDate
+    private Date criadoEm = new Date();
 
     public Long getId() {
         return id;

@@ -1,16 +1,31 @@
 package com.api.springboot.model;
 
-import java.time.LocalDateTime;
+import org.springframework.data.annotation.CreatedDate;
 
-public class Produto {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+public class Produto implements Serializable {
+
+    private static final long serialVersonUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String nome;
     private float preco;
     private float peso;
     private boolean tipo;
     private boolean ifPromocao;
+
+
     private Promocao promocao;
-    private LocalDateTime criadoEm;
+
+    @CreatedDate
+    private Date criadoEm = new Date();
 
     public Long getId() {
         return id;
@@ -68,19 +83,23 @@ public class Produto {
         this.promocao = promocao;
     }
 
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 
-    public Produto(String nome, float preco, float peso, boolean tipo,boolean ifPromocao, Promocao promocao) {
-        this.nome = nome;
-        this.preco = preco;
-        this.peso = peso;
-        this.tipo = tipo;
-        this.ifPromocao = ifPromocao;
-        this.promocao = promocao;
-        this.criadoEm = LocalDateTime.now();
+    public void setCriadoEm(Date criadoEm) {
+        this.criadoEm = criadoEm;
     }
-    public Produto(){this.criadoEm = LocalDateTime.now();}
+
+    //    public Produto(String nome, float preco, float peso, boolean tipo,boolean ifPromocao, Promocao promocao) {
+//        this.nome = nome;
+//        this.preco = preco;
+//        this.peso = peso;
+//        this.tipo = tipo;
+//        this.ifPromocao = ifPromocao;
+//        this.promocao = promocao;
+//        this.criadoEm = LocalDateTime.now();
+//    }
+//    public Produto(){this.criadoEm = LocalDateTime.now();}
 
 }

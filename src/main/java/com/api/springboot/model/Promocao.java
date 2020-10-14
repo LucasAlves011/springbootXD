@@ -20,6 +20,10 @@ public class Promocao implements Serializable {
     private int aPartir;
     private float preco;
 
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
+    private Produto produto;
+
     @CreatedDate
     private Date criadoEm = new Date() ;
 
@@ -45,6 +49,14 @@ public class Promocao implements Serializable {
 
     public float getPreco() {
         return preco;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public void setPreco(float preco) {

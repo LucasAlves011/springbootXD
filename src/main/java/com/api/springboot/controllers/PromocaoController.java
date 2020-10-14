@@ -30,7 +30,7 @@ public class PromocaoController {
     }
 
     @DeleteMapping("/promocao")
-    public void deletaProduto(@RequestBody Promocao produto){
+    public void deletaPromocao(@RequestBody Promocao produto){
         promocaoRepository.delete(produto);
     }
 

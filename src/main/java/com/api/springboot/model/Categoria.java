@@ -27,14 +27,6 @@ public class Categoria {
         return criadoEm;
     }
 
-    public Categoria(String nome) {
-        this.nome = nome;
-        this.criadoEm = LocalDateTime.now();
-    }
-
-    public Categoria(){
-        this.criadoEm = LocalDateTime.now();
-    }
 
 
 }

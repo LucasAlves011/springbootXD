@@ -72,15 +72,4 @@ public class Produto {
         return criadoEm;
     }
 
-    public Produto(String nome, float preco, float peso, boolean tipo,boolean ifPromocao, Promocao promocao) {
-        this.nome = nome;
-        this.preco = preco;
-        this.peso = peso;
-        this.tipo = tipo;
-        this.ifPromocao = ifPromocao;
-        this.promocao = promocao;
-        this.criadoEm = LocalDateTime.now();
-    }
-    public Produto(){this.criadoEm = LocalDateTime.now();}
-
 }

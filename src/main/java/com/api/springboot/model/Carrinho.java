@@ -14,20 +14,6 @@ public class Carrinho {
     private ArrayList<Compra> compras;
     private LocalDateTime criadoEm;
 
-    public Carrinho(String nome, boolean terminado, float precoTotal, LocalDate data, Compra compra, ArrayList<Compra> compras) {
-        this.nome = nome;
-        this.terminado = false;
-        this.precoTotal = precoTotal;
-        this.data = data;
-        this.compra = compra;
-        this.compras = compras;
-        this.criadoEm = LocalDateTime.now();
-    }
-
-    public Carrinho() {
-        this.criadoEm = LocalDateTime.now();
-    }
-
     public Long getId() {
         return id;
     }

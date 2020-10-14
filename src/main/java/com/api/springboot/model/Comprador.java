@@ -10,17 +10,6 @@ public class Comprador {
     private boolean superComprador;
     private LocalDateTime criadoEm;
 
-    public Comprador(String nome, boolean superComprador) {
-        this.nome = nome;
-        this.superComprador = superComprador;
-        this.criadoEm = LocalDateTime.now();
-    }
-
-    public Comprador() {
-
-        this.criadoEm = LocalDateTime.now();
-    }
-
     public Long getId() {
         return id;
     }

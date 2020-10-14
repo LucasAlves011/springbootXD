@@ -45,16 +45,4 @@ public class Compra {
         return criadoEm;
     }
 
-    public Compra(Produto produto, int quantidade, float precoTotal) {
-
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.precoTotal = precoTotal;
-        this.criadoEm = LocalDateTime.now();
-    }
-
-    public Compra() {
-        this.criadoEm = LocalDateTime.now();
-    }
-
 }

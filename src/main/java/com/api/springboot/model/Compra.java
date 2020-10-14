@@ -1,14 +1,30 @@
 package com.api.springboot.model;
+import org.hibernate.annotations.ManyToAny;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.*;
 import java.util.Date;
 
-
-public class Compra {
+@Entity
+@Table(name = "compras")
+public class Compra implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "produto_id")
     private Produto produto;
+
     private int quantidade;
     private float precoTotal;
+
+    @OneToOne
     private Promocao promocao;
+
+    @CreatedDate
     private Date criadoEm;
 
     public long getId() {

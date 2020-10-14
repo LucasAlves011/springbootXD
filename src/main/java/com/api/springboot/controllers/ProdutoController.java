@@ -39,7 +39,7 @@ public class ProdutoController {
         produtoRepository.deleteById(id);
     }
 
-    @PutMapping("/promocao")
+    @PutMapping("/produto/put")
     public Produto atualizarProduto(@RequestBody Produto produto){
         return produtoRepository.save(produto);
     }

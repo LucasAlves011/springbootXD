@@ -1,14 +1,23 @@
 package com.api.springboot.model;
 
 import org.apache.tomcat.jni.Local;
+import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Comprador {
+@Entity
+@Table(name = "comprador")
+public class Comprador implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private boolean superComprador;
-    private Date criadoEm;
+
+    @CreatedDate
+    private Date criadoEm = new Date();
 
     public Long getId() {
         return id;
@@ -34,8 +43,9 @@ public class Comprador {
         this.superComprador = superComprador;
     }
 
-    public Date getCriadoEm() {
-        return criadoEm;
-    }
+    public Date getCriadoEm() { return criadoEm; }
 
+    public void setCriadoEm(Date criadoEm) {
+        this.criadoEm = criadoEm;
+    }
 }

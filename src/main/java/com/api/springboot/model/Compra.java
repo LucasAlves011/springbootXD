@@ -1,5 +1,6 @@
 package com.api.springboot.model;
 import java.time.*;
+import java.util.Date;
 
 
 public class Compra {
@@ -7,7 +8,7 @@ public class Compra {
     private Produto produto;
     private int quantidade;
     private float precoTotal;
-    private LocalDateTime criadoEm;
+    private Date criadoEm;
 
     public long getId() {
         return id;
@@ -41,7 +42,7 @@ public class Compra {
         this.precoTotal = precoTotal;
     }
 
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 

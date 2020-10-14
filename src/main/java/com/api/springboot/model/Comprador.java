@@ -2,13 +2,13 @@ package com.api.springboot.model;
 
 import org.apache.tomcat.jni.Local;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Comprador {
     private Long id;
     private String nome;
     private boolean superComprador;
-    private LocalDateTime criadoEm;
+    private Date criadoEm;
 
     public Long getId() {
         return id;
@@ -34,7 +34,7 @@ public class Comprador {
         this.superComprador = superComprador;
     }
 
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 

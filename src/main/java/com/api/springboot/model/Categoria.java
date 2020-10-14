@@ -1,11 +1,11 @@
 package com.api.springboot.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Categoria {
     private Long id;
     private String nome;
-    private LocalDateTime criadoEm;
+    private Date criadoEm;
 
     public Long getId() {
         return id;
@@ -23,7 +23,7 @@ public class Categoria {
         this.nome = nome;
     }
 
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 

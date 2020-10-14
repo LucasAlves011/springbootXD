@@ -1,18 +1,17 @@
 package com.api.springboot.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Carrinho {
     private Long id;
     private String nome;
     private boolean terminado;
     private float precoTotal;
-    private LocalDate data;
+    //private Date data;
     private Compra compra;
     private ArrayList<Compra> compras;
-    private LocalDateTime criadoEm;
+    private Date criadoEm;
 
     public Long getId() {
         return id;
@@ -46,13 +45,9 @@ public class Carrinho {
         this.precoTotal = precoTotal;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
+    //public Date getData() {return data;}
 
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
+    //public void setData(Date data) { this.data = data; }
 
     public Compra getCompra() {
         return compra;
@@ -70,7 +65,7 @@ public class Carrinho {
         this.compras = compras;
     }
 
-    public LocalDateTime getCriadoEm() {
+    public Date getCriadoEm() {
         return criadoEm;
     }
 

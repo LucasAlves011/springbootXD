@@ -22,6 +22,7 @@ public class Compra implements Serializable {
     private float precoTotal;
 
     @ManyToOne
+    @JoinColumn(name = "carrinho_id")
     private Carrinho carrinho;
 
     @OneToOne

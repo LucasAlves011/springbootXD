@@ -23,10 +23,11 @@ public class Carrinho implements Serializable {
     private float precoTotal;
 
 
-    @JoinColumn()
-//    @OneToMany(mappedBy = "compras_id")
-//    @Cascade(value = {org.hibernate.annotations.CascadeType.ALL})
-    private List<Compra> compras ;
+    @OneToMany
+            //(cascade = CascadeType.ALL, mappedBy = "carrinhos")
+    @JoinColumn(name = "carrinho_id")
+    private List<Compra> compras = new ArrayList<>();
+    
 
     @CreatedDate
     private Date criadoEm = new Date();

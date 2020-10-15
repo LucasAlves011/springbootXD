@@ -19,6 +19,9 @@ public class Produto {
     private float peso;
     private boolean tipo;
 
+    @OneToOne
+    private Categoria categoria;
+
     @CreatedDate
     private Date criadoEm = new Date();
 
@@ -30,9 +33,7 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -64,6 +65,14 @@ public class Produto {
 
     public Date getCriadoEm() {
         return criadoEm;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
 }

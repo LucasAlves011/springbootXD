@@ -21,11 +21,14 @@ public class Compra implements Serializable {
     private int quantidade;
     private float precoTotal;
 
+    @ManyToOne
+    private Carrinho carrinho;
+
     @OneToOne
     private Promocao promocao;
 
     @CreatedDate
-    private Date criadoEm;
+    private Date criadoEm = new Date();
 
     public long getId() {
         return id;
@@ -71,4 +74,15 @@ public class Compra implements Serializable {
         this.promocao = promocao;
     }
 
+    public void setCriadoEm(Date criadoEm) {
+        this.criadoEm = criadoEm;
+    }
+
+    public Carrinho getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(Carrinho carrinho) {
+        this.carrinho = carrinho;
+    }
 }

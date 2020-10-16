@@ -19,7 +19,7 @@ public class Produto {
     private float peso;
     private boolean tipo;
 
-    @OneToOne
+    @ManyToOne
     private Categoria categoria;
 
     @CreatedDate

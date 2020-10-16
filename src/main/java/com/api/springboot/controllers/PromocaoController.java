@@ -14,6 +14,11 @@ public class PromocaoController {
     @Autowired
     PromocaoRepository promocaoRepository;
 
+    @GetMapping("/certo")
+    public String scd(){
+        return "A aplicação no heroku funcionou!!!!";
+    }
+
     @GetMapping("/promocoes")
     public List<Promocao> listarPromocoes(){
         return promocaoRepository.findAll();
